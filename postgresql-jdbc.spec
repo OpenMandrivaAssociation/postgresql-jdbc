@@ -5,7 +5,7 @@
 
 Name:           postgresql-jdbc
 Version:        %{postgresql_version}.%{postgresql_jdbc_release}
-Release:        %mkrel 1
+Release:        %mkrel 2
 Epoch:          0
 Summary:        PostgreSQL JDBC driver
 License:        BSD
@@ -15,8 +15,6 @@ Group:          Development/Java
 URL:            http://jdbc.postgresql.org/
 Source0:        http://jdbc.postgresql.org/download/postgresql-jdbc-%{postgresql_version}-%{postgresql_jdbc_release}.src.tar.gz
 %if %{gcj_support}
-Requires(post): java-gcj-compat
-Requires(postun): java-gcj-compat
 BuildRequires:  java-gcj-compat-devel
 %else
 BuildArch:      noarch
