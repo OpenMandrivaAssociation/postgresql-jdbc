@@ -53,7 +53,7 @@ Documentation for %{name}.
 export CLASSPATH=
 export OPT_JAR_LIST=
 sh ./update-translations.sh
-%{ant}
+%{ant} -Dbuild.compiler=modern -Dant.build.javac.source=1.5
 
 DOCBOOK_STYLESHEET=`rpm -ql docbook-style-xsl | %{__grep} /html/chunk.xsl`
 DOCBOOK_XSL=`echo ${DOCBOOK_STYLESHEET} | %{__sed} 's|/html/chunk.xsl||'`
