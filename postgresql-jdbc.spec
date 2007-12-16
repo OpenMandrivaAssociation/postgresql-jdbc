@@ -5,7 +5,7 @@
 
 Name:           postgresql-jdbc
 Version:        %{postgresql_version}.%{postgresql_jdbc_release}
-Release:        %mkrel 2
+Release:        %mkrel 3
 Epoch:          0
 Summary:        PostgreSQL JDBC driver
 License:        BSD
@@ -27,7 +27,7 @@ BuildRequires:  java-devel >= 0:1.4.0
 BuildRequires:  jaxp_transform_impl
 # GNU jaxp_transform_impl doesn't work
 BuildRequires:  xalan-j2
-BuildRequires:  jpackage-utils >= 0:1.6
+BuildRequires:  java-rpmbuild >= 0:1.6
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
