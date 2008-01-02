@@ -28,6 +28,7 @@ BuildRequires:  jaxp_transform_impl
 # GNU jaxp_transform_impl doesn't work
 BuildRequires:  xalan-j2
 BuildRequires:  java-rpmbuild >= 0:1.6
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 The PostgreSQL JDBC driver allows Java programs to connect to a
