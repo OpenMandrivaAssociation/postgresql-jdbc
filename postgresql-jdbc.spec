@@ -1,17 +1,15 @@
-%define gcj_support             1
+%define gcj_support             0
 %define sname                   postgresql
-%define postgresql_version      8.2
-%define postgresql_jdbc_release 504
+%define postgresql_version      8.3
+%define postgresql_jdbc_release 603
 
 Name:           postgresql-jdbc
 Version:        %{postgresql_version}.%{postgresql_jdbc_release}
-Release:        %mkrel 3
+Release:        %mkrel 0.0.1
 Epoch:          0
 Summary:        PostgreSQL JDBC driver
 License:        BSD
 Group:          Development/Java
-#Distribution:  JPackage
-#Vendor:        JPackage Project
 URL:            http://jdbc.postgresql.org/
 Source0:        http://jdbc.postgresql.org/download/postgresql-jdbc-%{postgresql_version}-%{postgresql_jdbc_release}.src.tar.gz
 %if %{gcj_support}
@@ -81,9 +79,7 @@ export OPT_JAR_LIST="ant/ant-nodeps ant/ant-trax xalan-j2 xalan-j2-serializer"
 %{__mkdir_p} %{buildroot}%{_javadir}
 %{__cp} -a jars/%{sname}.jar %{buildroot}%{_javadir}/%{sname}-%{version}.jar
 (cd %{buildroot}%{_javadir} && %{__ln_s} %{sname}-%{version}.jar %{sname}.jar)
-%if %{gcj_support}
-%{_bindir}/aot-compile-rpm
-%endif
+%{gcj_compile}
 
 %clean
 %{__rm} -rf %{buildroot}
@@ -100,10 +96,7 @@ export OPT_JAR_LIST="ant/ant-nodeps ant/ant-trax xalan-j2 xalan-j2-serializer"
 %defattr(0644,root,root,0755)
 %doc LICENSE README
 %{_javadir}/*.jar
-%if %{gcj_support}
-%dir %{_libdir}/gcj/%{name}
-%attr(-,root,root) %{_libdir}/gcj/%{name}/*.jar.*
-%endif
+%{gcj_files}
 
 %files manual
 %defattr(0644,root,root,0755)
