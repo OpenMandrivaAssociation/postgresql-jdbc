@@ -5,7 +5,7 @@
 
 Name:           postgresql-jdbc
 Version:        %{postgresql_version}.%{postgresql_jdbc_release}
-Release:        %mkrel 0.0.1
+Release:        %mkrel 2.0.1
 Epoch:          0
 Summary:        PostgreSQL JDBC driver
 License:        BSD
