@@ -39,7 +39,7 @@ Release:	4.0%{?dist}
 # ASL 2.0 applies only to postgresql-jdbc.pom file, the rest is BSD
 License:	BSD and ASL 2.0
 
-URL:		http://jdbc.postgresql.org/
+URL:		https://jdbc.postgresql.org/
 
 Source0:	http://jdbc.postgresql.org/download/%{name}-%{upstreamver}.src.tar.gz
 # originally http://repo2.maven.org/maven2/postgresql/postgresql/8.4-701.jdbc4/postgresql-8.4-701.jdbc4.pom:
